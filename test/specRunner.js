@@ -1,18 +1,15 @@
 require.config({
-    baseUrl: '../',
     paths: {
-        jquery: 'vendor/jquery/jquery',
-        cartodb: 'vendor/cartodb.js/dist/cartodb.nojquery',
-        mocha: 'vendor/mocha/mocha',
-        chai: 'vendor/chai/chai'
+        jquery: '../../vendor/jquery/jquery',
+        backbone: '../../vendor/backbone-amd/backbone',
+        underscore: '../../vendor/underscore-amd/underscore',
+        handlebars: '../../vendor/handlebars/handlebars',
+        quojs: '../../vendor/quojs/quo',
+        lungo: '../../vendor/lungo/lungo'
     },
     shim: {
-        cartodb: {
-            deps: ['jquery'],
-            exports: 'cartodb'
-        },
-        mocha: {
-            exports: 'mocha'
+        jquery: {
+            exports: '$'
         }
     }
 });

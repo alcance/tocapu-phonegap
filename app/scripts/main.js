@@ -1,12 +1,19 @@
 require.config({
     paths: {
         jquery: '../../vendor/jquery/jquery',
-        cartodb: '../../vendor/cartodb.js/dist/cartodb.nojquery'
+        backbone: '../../vendor/backbone-amd/backbone',
+        underscore: '../../vendor/underscore-amd/underscore',
+        leaflet: '../../vendor/leaflet/dist/'
+        handlebars: '../../vendor/handlebars/handlebars',
+        quojs: '../../vendor/quojs/quo',
+        lungo: '../../vendor/lungo/lungo'
     },
     shim: {
-        cartodb: {
-            deps: ['jquery'],
-            exports: 'cartodb'
+        jquery: {
+            exports: '$'
+        },
+        leaflet: {
+            exports: 'L'
         }
     }
 });
@@ -14,7 +21,7 @@ require.config({
 require(['views/map'], function (MapView) {
     'use strict';
 
-    var app = {};
+    //var app = {};
 
-    app.map = new MapView();
+    //app.map = new MapView();
 });
