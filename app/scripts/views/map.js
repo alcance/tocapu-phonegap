@@ -1,4 +1,4 @@
-define(['jquery', 'cartodb'], function ($, cartodb) {
+define(['jquery', 'backbone', 'leaflet'], function ($, Backbone, L) {
     'use strict';
 
     var MapView = Backbone.View.extend({
@@ -16,7 +16,7 @@ define(['jquery', 'cartodb'], function ($, cartodb) {
             this.map = map;
         },
         createLayer: function () {
-            this.layer = cartodb.createLayer();
+            //this.layer = cartodb.createLayer();
         }
     });
 

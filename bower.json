@@ -16,6 +16,6 @@
     "underscore-amd": "~1.5.1",
     "lungo": "~2.2.1",
     "phonegap": "~2.9.0",
-    "leaflet": "~0.6.4"
+    "leaflet": "0.6.2"
   }
 }

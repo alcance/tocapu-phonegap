@@ -3,7 +3,7 @@ require.config({
         jquery: '../../vendor/jquery/jquery',
         backbone: '../../vendor/backbone-amd/backbone',
         underscore: '../../vendor/underscore-amd/underscore',
-        leaflet: '../../vendor/leaflet/dist/'
+        leaflet: '../../vendor/leaflet/dist/leaflet',
         handlebars: '../../vendor/handlebars/handlebars',
         quojs: '../../vendor/quojs/quo',
         lungo: '../../vendor/lungo/lungo'
@@ -14,14 +14,15 @@ require.config({
         },
         leaflet: {
             exports: 'L'
+        },
+        backbone: {
+            deps: ['underscore'],
+            exports: 'Backbone'
         }
     }
 });
 
-require(['views/map'], function (MapView) {
+require(['views/map'], function(MapView) {
     'use strict';
-
-    //var app = {};
-
-    //app.map = new MapView();
+    console.log(MapView);
 });

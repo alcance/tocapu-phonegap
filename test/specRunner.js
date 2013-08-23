@@ -1,15 +1,25 @@
 require.config({
+    baseUrl: '../',
     paths: {
-        jquery: '../../vendor/jquery/jquery',
-        backbone: '../../vendor/backbone-amd/backbone',
-        underscore: '../../vendor/underscore-amd/underscore',
-        handlebars: '../../vendor/handlebars/handlebars',
-        quojs: '../../vendor/quojs/quo',
-        lungo: '../../vendor/lungo/lungo'
+        mocha: 'vendor/mocha/mocha',
+        chai: 'vendor/chai/chai',
+        jquery: 'vendor/jquery/jquery',
+        backbone: 'vendor/backbone-amd/backbone',
+        underscore: 'vendor/underscore-amd/underscore',
+        leaflet: 'vendor/leaflet/dist/leaflet',
+        handlebars: 'vendor/handlebars/handlebars',
+        quojs: 'vendor/quojs/quo',
+        lungo: 'vendor/lungo/lungo'
     },
     shim: {
+        mocha: {
+            exports: 'mocha'
+        },
         jquery: {
             exports: '$'
+        },
+        leaflet: {
+            exports: 'L'
         }
     }
 });
