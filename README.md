@@ -35,3 +35,5 @@ To stop grunt press Ctrl + C on Terminal
     grunt build
 
     phonegap run ios
+
+    phonegap run android

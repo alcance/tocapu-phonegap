@@ -4,9 +4,7 @@ require.config({
         backbone: '../../vendor/backbone-amd/backbone',
         underscore: '../../vendor/underscore-amd/underscore',
         leaflet: '../../vendor/leaflet/dist/leaflet',
-        handlebars: '../../vendor/handlebars/handlebars',
-        quojs: '../../vendor/quojs/quo',
-        lungo: '../../vendor/lungo/lungo'
+        handlebars: '../../vendor/handlebars/handlebars'
     },
     shim: {
         jquery: {
@@ -22,7 +20,9 @@ require.config({
     }
 });
 
-require(['views/map'], function(MapView) {
+require(['views/map', 'lungo'], function(MapView, Lungo) {
     'use strict';
-    console.log(MapView);
+    Lungo.init({
+        name: 'tocapu'
+    });
 });

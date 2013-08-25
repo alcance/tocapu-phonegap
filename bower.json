@@ -14,7 +14,6 @@
     "chai": "~1.7.2",
     "backbone-amd": "~1.0.0",
     "underscore-amd": "~1.5.1",
-    "lungo": "~2.2.1",
     "phonegap": "~2.9.0",
     "leaflet": "0.6.2"
   }
