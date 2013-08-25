@@ -20,9 +20,7 @@ require.config({
     }
 });
 
-require(['views/map', 'lungo'], function(MapView, Lungo) {
+require(['views/map'], function(MapView) {
     'use strict';
-    Lungo.init({
-        name: 'tocapu'
-    });
+    console.log(MapView);
 });
