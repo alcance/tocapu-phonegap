@@ -4,3 +4,7 @@ dist
 .tmp
 .sass-cache
 vendor/*
+merges/*
+platforms/*
+plugins/*
+www/*

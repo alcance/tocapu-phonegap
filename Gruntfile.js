@@ -24,7 +24,7 @@ module.exports = function (grunt) {
             dist: {
                 files: [{
                     dot: true,
-                    src: ['.tmp', 'dist']
+                    src: ['.tmp', 'www']
                 }]
             }
         },
@@ -34,9 +34,10 @@ module.exports = function (grunt) {
                     expand: true,
                     dot: true,
                     cwd: 'app',
-                    dest: 'dist',
+                    dest: 'www',
                     src: [
                         //'images/{,*/}*.{jpg,png}',
+                        'config.xml',
                         'fonts/*',
                         'lib/*',
                         'templates/*'
@@ -50,7 +51,7 @@ module.exports = function (grunt) {
                     expand: true,
                     cwd: 'app/images',
                     src: '{,*/}*.{png,jpg,jpeg}',
-                    dest: 'dist/images'
+                    dest: 'www/images'
                 }]
             }
         },
@@ -58,7 +59,7 @@ module.exports = function (grunt) {
             dist: {
                 options: {
                     baseUrl: 'app/scripts',
-                    out: 'dist/scripts/main.js',
+                    out: 'www/scripts/main.js',
                     mainConfigFile: 'app/scripts/main.js',
                     include: 'main',
                     optimize: 'uglify',
@@ -71,11 +72,45 @@ module.exports = function (grunt) {
         cssmin: {
             dist: {
                 files: {
-                    'dist/styles/main.css': [
+                    'www/styles/main.css': [
                         'app/styles/{,*/}*.css',
                         '.tmp/styles/{,*/}*.css'
                     ]
                 }
+            }
+        },
+        useminPrepare: {
+            options: {
+                dest: 'www'
+            },
+            html: 'app/index.html'
+        },
+        usemin: {
+            options: {
+                dirs: ['www']
+            },
+            html: ['www/{,*/}*.html'],
+            css: ['www/styles/{,*/}*.css']
+        },
+        htmlmin: {
+            dist: {
+                options: {
+                    /*removeCommentsFromCDATA: true,
+                    // https://github.com/yeoman/grunt-usemin/issues/44
+                    //collapseWhitespace: true,
+                    collapseBooleanAttributes: true,
+                    removeAttributeQuotes: true,
+                    removeRedundantAttributes: true,
+                    useShortDoctype: true,
+                    removeEmptyAttributes: true,
+                    removeOptionalTags: true*/
+                },
+                files: [{
+                    expand: true,
+                    cwd: 'app',
+                    src: '*.html',
+                    dest: 'www'
+                }]
             }
         },
         bower: {
@@ -123,11 +158,14 @@ module.exports = function (grunt) {
         'jshint',
         'mocha_phantomjs',
         'clean:dist',
+        'htmlmin',
+        'useminPrepare',
         'requirejs:dist',
         'compass:dist',
         'cssmin',
         'imagemin',
-        'copy:dist'
+        'copy:dist',
+        'usemin'
     ]);
 
     grunt.registerTask('test', [
