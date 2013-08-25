@@ -5,6 +5,9 @@ dist
 .sass-cache
 vendor/*
 merges/*
+!merges/.gitkeep
 platforms/*
+!platforms/.gitkeep
 plugins/*
+!plugins/.gitkeep
 www/*

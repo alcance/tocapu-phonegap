@@ -8,9 +8,9 @@ A front template to geo-applications.
 
 First open Terminal.
 
-Install Bower and Grunt Client
+Install Bower, Grunt Client and Phonegap
 
-	npm install -g bower grunt-cli phantomjs
+	npm install -g bower grunt-cli phonegap
 
 Install project Node dependencies
 
@@ -33,3 +33,5 @@ To stop grunt press Ctrl + C on Terminal
 ## Deploy
 
     grunt build
+
+    phonegap run ios
